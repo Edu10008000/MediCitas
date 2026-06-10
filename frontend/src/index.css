@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Nunito', sans-serif;
+    /* Fuente base más grande para adultos mayores */
+    font-size: 18px;
+  }
+
+  body {
+    @apply bg-slate-50 text-slate-800 antialiased;
+  }
+
+  /* Asegura que botones tengan mínimo 48px de altura (accesibilidad táctil) */
+  button, [role="button"] {
+    min-height: 48px;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary text-white font-bold px-6 py-3 rounded-xl
+           shadow-btn hover:bg-primary-dark active:scale-95
+           transition-all duration-150 focus:outline-none
+           focus:ring-4 focus:ring-primary/40 text-lg;
+  }
+
+  .btn-secondary {
+    @apply bg-white text-primary border-2 border-primary font-bold
+           px-6 py-3 rounded-xl hover:bg-primary/5 active:scale-95
+           transition-all duration-150 focus:outline-none
+           focus:ring-4 focus:ring-primary/40 text-lg;
+  }
+
+  .btn-danger {
+    @apply bg-danger text-white font-bold px-6 py-3 rounded-xl
+           hover:bg-red-700 active:scale-95 transition-all duration-150
+           focus:outline-none focus:ring-4 focus:ring-red-300 text-lg;
+  }
+
+  .card {
+    @apply bg-white rounded-2xl shadow-card p-6 border border-slate-100;
+  }
+
+  .input-field {
+    @apply w-full border-2 border-slate-200 rounded-xl px-4 py-3 text-lg
+           focus:outline-none focus:border-primary transition-colors
+           placeholder:text-slate-400;
+  }
+
+  .badge-baja    { @apply bg-emerald-100 text-emerald-800 font-bold px-3 py-1 rounded-full text-base; }
+  .badge-media   { @apply bg-amber-100 text-amber-800 font-bold px-3 py-1 rounded-full text-base; }
+  .badge-alta    { @apply bg-red-100 text-red-800 font-bold px-3 py-1 rounded-full text-base; }
+  .badge-abierto { @apply bg-emerald-100 text-emerald-800 font-bold px-3 py-1 rounded-full text-base; }
+  .badge-cerrado { @apply bg-slate-100 text-slate-600 font-bold px-3 py-1 rounded-full text-base; }
+}
